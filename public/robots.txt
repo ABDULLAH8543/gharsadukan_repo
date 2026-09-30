@@ -1,0 +1,8 @@
+# robots.txt for https://your-domain.com
+# Replace 'https://your-domain.com' with your real site URL
+
+User-agent: *
+Allow: /
+
+# sitemap location (update domain)
+Sitemap: https://www.gharsadukan.com/sitemap.xml

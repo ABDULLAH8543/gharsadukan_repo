@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+.web-two-theme {
+  --background: #e9e1d3;
+  --foreground: #18140f;
+  --paper: #f8f2e8;
+  --paper-strong: #efe4d2;
+  --ink: #1a1410;
+  --ink-soft: #4f4337;
+  --line: #b9a891;
+  --accent: #a1281f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-source-serif);
+}
+
+.web-two-theme {
+  padding-top: 20px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.5), transparent 35%),
+    radial-gradient(circle at 80% 90%, rgba(0, 0, 0, 0.05), transparent 40%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-serif), Georgia, serif;
+}
+
+.newsprint-bg {
+  background-image:
+    linear-gradient(rgba(33, 23, 13, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 23, 13, 0.03) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.newspaper-title {
+  font-family: var(--font-libre-baskerville), "Times New Roman", serif;
+  letter-spacing: 0.03em;
+}
+
+.shop-title-ease-in {
+  opacity: 0;
+  animation: title-ease-in 0.55s ease-in forwards;
+}
+
+.kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.news-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.15));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(40, 29, 17, 0.14);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise 0.7s ease forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.22s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.32s;
+}
+
+.breaking-wrap {
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.ticker-track span {
+  display: inline-block;
+  padding-right: 2.5rem;
+  animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes title-ease-in {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateY(6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .newspaper-title {
+    letter-spacing: 0.02em;
+  }
+}

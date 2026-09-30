@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Intro screen styling */
+.intro-screen {
+    background-color: rgb(0, 60, 255);
+}
+
+/* Intro screen animation */
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.intro-screen--exit {
+  animation: slideOutUp 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.intro-caret {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+/* Mobile drawer animation */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-drawer {
+  animation: slideInFromLeft 0.3s ease-out forwards;
+}
+
+/* Mobile drawer exit animation */
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.mobile-drawer--exit {
+  animation: slideOutToLeft 0.3s ease-in forwards;
+}
